@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 
-// daca access layer
+// data access layer
 // talks to DB, fetches the data
 
 @Repository

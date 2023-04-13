@@ -9,7 +9,9 @@ import java.util.Optional;
 
 
 // uses repo class
-// talks to DB, gets list of movies, returns it to the API layer
+// talks to DB through the repo class
+
+// returns data to the API layer
 
 
 @Service
