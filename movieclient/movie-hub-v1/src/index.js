@@ -5,7 +5,12 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// sets up a React application with routing functionality
+// renders the App component to the root element of the DOM
+
+const root = ReactDOM.createRoot(document.getElementById('root'));  // root element to render the app
+
 root.render(
   <React.StrictMode>
 

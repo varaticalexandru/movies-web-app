@@ -5,10 +5,17 @@ import Layout from './components/Layout';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 
+
+
+// App component
+// sets up the API call to fetch movies
+// passes the retrieved data as a prop to the `Home` component
 function App() {
 
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState(); // state variable to store the movies, function to update it
 
+  // function to fetch the movies from the API endpoint
+  // and update the state variable
   const getMovies = async () => {
 
     try {
@@ -25,17 +32,23 @@ function App() {
 
   }
 
+  // function to fetch the movies when the component is mounted
   useEffect(() => {
     getMovies();
   }, [])
 
 
+  // returns the JSX to render the component
   return (
     <div className="App">
       
+      {/* routing for the App */}
       <Routes>
 
+        {/* route for the Layout */}
         <Route path="/" element={<Layout/>}>
+
+          {/* route for the Home component */}
           <Route path="/" element={<Home movies={movies} />} ></Route>
 
         </Route>
