@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
+import Header from './components/header/Header';
 
-
+ 
 
 // App component
 // sets up the API call to fetch movies
@@ -41,8 +42,11 @@ function App() {
   // returns the JSX to render the component
   return (
     <div className="App">
+
+      {/* Header component */}
+      <Header />
       
-      {/* routing for the App */}
+      {/* route mappings for the App */}
       <Routes>
 
         {/* route for the Layout */}
