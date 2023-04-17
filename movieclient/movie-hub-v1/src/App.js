@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import Header from './components/header/Header';
 import Trailer from './components/trailer/Trailer';
+import Reviews from './components/reviews/Reviews';
+import NotFound from './components/notFound/NotFound';
 
  
 
@@ -15,7 +17,10 @@ import Trailer from './components/trailer/Trailer';
 
 function App() {
 
-  const [movies, setMovies] = useState(); // state variable to store the movies, function to update it
+  const [movies, setMovies] = useState(); // state variable to store [all] the movies, function to update it
+  const [movie, setMovie] = useState(); // state variable to store a single movie, function to update it
+  const [reviews, setReviews] = useState([]); // state variable to store the reviews for a movie, function to update it
+
 
   // function to fetch the movies from the API endpoint
   // and update the state variable
@@ -33,6 +38,22 @@ function App() {
       console.log(err);
     }
 
+  }
+
+  const getMovieData = async (movieId) => {
+
+    try {
+
+      const response = await api.get(`/api/v1/movies/${movieId}`); // make a GET request to the API endpoint to get a single movie
+      const singleMovie = response.data; // extract the data from the response
+      
+      setMovie(singleMovie); // update the state variable (movie)
+
+      setReviews(singleMovie.reviews); // update the state variable (reviews)
+
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   // function to fetch the movies when the component is mounted
@@ -59,6 +80,17 @@ function App() {
 
           {/* route for the Trailer component */}
           <Route path="/Trailer/:ytTrailerId" element={<Trailer />} ></Route>
+
+          {/* route for the Reviews component */}
+          <Route path="/Reviews/:movieId" element={<Reviews getMovieData={getMovieData} 
+            movie={movie} 
+            reviews={reviews} 
+            setReviews={setReviews} />} >
+
+          </Route>
+
+          {/* route for the NotFound component */}
+          <Route path="*" element={<NotFound />} ></Route>
 
         </Route>
 

@@ -6,6 +6,8 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 // uses repo class
@@ -24,7 +26,7 @@ public class ReviewService {
 
     public Review createReview(String reviewBody, String imdbId) {
 
-        Review review = reviewRepository.insert(new Review(reviewBody));
+        Review review = reviewRepository.insert(new Review(reviewBody, LocalDateTime.now(), LocalDateTime.now()));
 
         mongoTemplate.update(Movie.class)
                 .matching(Criteria.where("imdbId").is(imdbId))
@@ -33,5 +35,4 @@ public class ReviewService {
 
         return review;
     }
-
 }

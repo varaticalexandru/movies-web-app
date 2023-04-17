@@ -9,7 +9,6 @@ import { NavLink } from 'react-router-dom';
 
 // responsive layout for the navigation menu, displayed at the top of the page
 
-
 const Header = () => {
   return (
     <Navbar bg='dark' variant='dark' expand='lg'>

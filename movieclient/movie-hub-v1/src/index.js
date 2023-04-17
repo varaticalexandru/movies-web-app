@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));  // root element to render the app
 
 root.render(
+  
   <React.StrictMode>
 
     <BrowserRouter>
