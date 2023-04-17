@@ -5,12 +5,14 @@ import Layout from './components/Layout';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import Header from './components/header/Header';
+import Trailer from './components/trailer/Trailer';
 
  
 
 // App component
 // sets up the API call to fetch movies
-// passes the retrieved data as a prop to the `Home` component
+// passes the retrieved data as a prop to the Home component
+
 function App() {
 
   const [movies, setMovies] = useState(); // state variable to store the movies, function to update it
@@ -54,6 +56,9 @@ function App() {
 
           {/* route for the Home component */}
           <Route path="/" element={<Home movies={movies} />} ></Route>
+
+          {/* route for the Trailer component */}
+          <Route path="/Trailer/:ytTrailerId" element={<Trailer />} ></Route>
 
         </Route>
 
