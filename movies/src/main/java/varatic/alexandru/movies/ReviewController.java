@@ -16,7 +16,6 @@ import java.util.Map;
 // gets a req from user & returns a response
 
 @RequestMapping("/api/v1/reviews")
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class ReviewController {
 
