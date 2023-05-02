@@ -5,7 +5,7 @@
 
 .movie-poster {
     height: 300px;
-    border: 1px solid orange;
+    border: 1px solid #31d2f2;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -54,12 +54,17 @@
     padding: 0px;
     margin: 0px;
     width: 150px;
+    font-size: 2rem;
+}
+
+#reviews-button {
+    font-size: 1.2rem;
 }
 
 .play-button-icon {
     padding: 0px;
     margin: 0px;
-    color: orange;
+    color: #31d2f2;
     font-size: 3rem;
     transition: 0.3s;
     cursor: pointer;
@@ -68,6 +73,10 @@
 .play-button-icon:hover {
     font-size: 4rem;
     color: white;
+}
+
+#reviews-button {
+   
 }
 
 @media only screen and (max-width: 768px) {

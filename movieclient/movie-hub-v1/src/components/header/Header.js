@@ -6,16 +6,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 // responsive layout for the navigation menu, displayed at the top of the page
 
 const Header = () => {
   return (
-    <Navbar bg='dark' variant='dark' expand='lg'>
+    <Navbar bg='transparent' variant='dark' expand='lg'>
 
         <Container fluid>
 
-            <Navbar.Brand href='/' style={{"color": "orange"}}>
+            <Navbar.Brand href='/' style={{"color": "orange"}} className='brand'>
                 <FontAwesomeIcon icon={faVideoCamera} /> Movie Hub
             </Navbar.Brand>
 
@@ -38,8 +39,8 @@ const Header = () => {
                     
                 </Nav>
 
-                <Button variant='outline-warning' className="me-2">Login</Button>
-                <Button variant='outline-warning'>Sign Up</Button>
+                <Button variant='outline-warning' className="me-2" id='login'>Login</Button>
+                <Button variant='outline-warning' id='signup'>Sign Up</Button>
 
 
             </Navbar.Collapse>
